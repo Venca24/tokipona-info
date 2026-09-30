@@ -1,0 +1,48 @@
+theme: jekyll-theme-chirpy
+
+lang: en
+
+timezone: UTC
+
+title: tokipona.info
+
+avatar: "/assets/img/Toki_pona2-fb.png"
+
+tagline: toki pona en 76 ilustritaj lecionoj
+
+description: >-
+  toki pona en 76 ilustritaj lecionoj
+
+theme_mode: light
+
+toc: false
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: "/cs/"
+      type: pages
+    values:
+      layout: page
+      comments: false
+      lang: cs-CZ
+      permalink: /cs/:title/
+  - scope:
+      path: "/eo/"
+      type: pages
+    values:
+      layout: page
+      comments: false
+      lang: eo
+      permalink: /eo/:title/
+
+compress_html:
+  clippings: false
+  comments: false
+  endings: false
+  profile: false
+  blanklines: false
