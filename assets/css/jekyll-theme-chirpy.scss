@@ -1,0 +1,44 @@
+---
+---
+
+@use "main" as *;
+
+.start-button {
+	background-color:transparent;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:3px solid #C2DDDF;
+	display:inline-block;
+	color:#63A4B8;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:86px;
+	text-decoration:none;
+	text-align:center;
+}
+
+.start-button:link, .start-button:visited, .start-button:hover {
+        text-decoration:none;
+	color:#63A4B8;
+}
+
+.start-button:active {
+	position:relative;
+	top:3px;
+	color:#63A4B8;
+}
