@@ -1,0 +1,89 @@
+# The layout text of site
+
+# ----- Commons label -----
+
+layout:
+  post: Afiŝo
+  category: Kategorio
+  tag: Kradvorto
+
+# The tabs of sidebar
+tabs:
+  # format: <filename_without_extension>: <value>
+  home: Ĉefpaĝo
+  categories: Kategorioj
+  tags: Kradvortoj
+  archives: Arĥivoj
+  about: Pri mi
+
+# the text displayed in the search bar & search results
+search:
+  hint: serĉi
+  cancel: Nuligi
+  no_results: Ha! Neniu rezulto estis trovita.
+
+panel:
+  lastmod: Ĝisdatigita antaŭ nelonge
+  trending_tags: Plejaj kradvortoj
+  toc: Enhavo
+
+copyright:
+  # Shown at the bottom of the post
+  license:
+    template: Tiu ĉi afiŝo estas sub la kondiĉoj de la permesilo :LICENSE_NAME fare de la aŭtoro.
+    name: CC BY 4.0
+    link: https://creativecommons.org/licenses/by/4.0/
+
+  # Displayed in the footer
+  brief: Iuj rajtoj rezervitaj.
+  verbose: >-
+    Se ne estas indikite aliel, ĉiuj afiŝoj en tiu ĉi retejo estas sub la kondiĉoj
+    de la permesilo Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+meta: Uzita :PLATFORM kun etoso :THEME
+
+not_found:
+  statement: Ni pardonpetas, la URL-adreson ni lokigis malbone aŭ ĝi ligas al io, kio ne ekzistas.
+
+notification:
+  update_found: Nova versio de la enhavo estas disponebla.
+  update: Ĝisdatigo
+
+# ----- Posts related labels -----
+
+post:
+  written_by: De
+  posted: Publikigita
+  updated: Ĝisdatigita
+  words: vortoj
+  pageview_measure: rigardoj
+  read_time:
+    unit: minutoj
+    prompt: legado
+  relate_posts: Plia legado
+  share: Diskonigi
+  button:
+    next: Pli nova
+    previous: Pli malnova
+    copy_code:
+      succeed: Kopiita!
+    share_link:
+      title: Kopii ligilon
+      succeed: Kopiita!
+
+# Date time format.
+# See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
+df:
+  post:
+    strftime: "%e-a de %B %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
+
+# categories page
+categories:
+  category_measure: kategorio
+  post_measure:
+    singular: afiŝo
+    plural: afiŝoj
