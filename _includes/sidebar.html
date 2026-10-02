@@ -1,0 +1,171 @@
+<!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+      {%- if site.avatar != empty and site.avatar -%}
+        {%- capture avatar_url -%}
+          {% include media-url.html src=site.avatar %}
+        {%- endcapture -%}
+        <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      {%- endif -%}
+    </a>
+
+    <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  {% assign url_first_segment = page.url | remove_first: '/' | split: '/' | first %}
+  {% assign current_folder = '' %}
+
+  {% for tab in site.tabs %}
+    {% assign tab_parts = tab.path | split: '/' %}
+    {% if tab_parts.size > 2 and tab_parts[1] == url_first_segment %}
+      {% assign current_folder = url_first_segment %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if current_folder != '' %}
+    {% assign home_url = '/' | append: current_folder | append: '/' %}
+  {% else %}
+    {% assign home_url = '/' %}
+  {% endif %}
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item{% if page.url == home_url or page.layout == 'home' and current_folder == '' %} active{% endif %}">
+        <a href="{{ home_url | relative_url }}" class="nav-link">
+          <span>{{ site.data.locales[include.lang].tabs.home | default: 'Home' | upcase }}</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      {% assign sorted_tabs = site.tabs | sort: 'order' %}
+      {% for tab in sorted_tabs %}
+        {% assign tab_parts = tab.path | split: '/' %}
+        {% if tab_parts.size > 2 %}
+          {% assign tab_folder = tab_parts[1] %}
+        {% else %}
+          {% assign tab_folder = '' %}
+        {% endif %}
+
+        {% if tab_folder == current_folder %}
+          {% assign tab_url = tab.target_url | default: tab.url %}
+          <li class="nav-item{% if page.url == tab_url or page.url == tab.url %} active{% endif %}">
+            <a href="{{ tab_url | relative_url }}" class="nav-link">
+              <span>{{ tab.title | upcase }}</span>
+            </a>
+          </li>
+          <!-- .nav-item -->
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
+      {%- capture icon_system -%}
+        <i class="fa-solid fa-display" data-theme-mode="system"></i>
+      {%- endcapture -%}
+
+      {%- capture icon_light -%}
+        <i class="fa-regular fa-sun" data-theme-mode="light"></i>
+      {%- endcapture -%}
+
+      {%- capture icon_dark -%}
+        <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
+      {%- endcapture -%}
+
+      <div class="btn-group dropup">
+        <button
+          type="button"
+          class="btn btn-link nav-link"
+          aria-label="Switch Mode"
+          id="mode-toggle"
+          data-bs-toggle="dropdown"
+        >
+          {{- icon_light -}}
+          {{- icon_dark -}}
+          {{- icon_system -}}
+        </button>
+        <ul class="dropdown-menu rounded-3 mb-1 p-1">
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light">
+              {{- icon_light -}}
+              {{- site.data.locales[lang].theme.light -}}
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark">
+              {{- icon_dark -}}
+              {{- site.data.locales[lang].theme.dark -}}
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system">
+              {{- icon_system -}}
+              {{- site.data.locales[lang].theme.system -}}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
+
+    {% for entry in site.data.contact %}
+      {%- assign url = null -%}
+
+      {% case entry.type %}
+        {% when 'github', 'twitter' %}
+          {%- unless site[entry.type].username -%}
+            {%- continue -%}
+          {%- endunless -%}
+          {%- capture url -%}
+            https://{{ entry.type }}.com/{{ site[entry.type].username }}
+          {%- endcapture -%}
+        {% when 'email' %}
+          {%- unless site.social.email -%}
+            {%- continue -%}
+          {%- endunless -%}
+          {%- assign email = site.social.email | split: '@' -%}
+          {%- capture url -%}
+            javascript:void(location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'))
+          {%- endcapture -%}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+
+      {% if url %}
+        <a
+          href="{{ url }}"
+          aria-label="{{ entry.type }}"
+          {% assign link_types = '' %}
+
+          {% unless entry.noblank %}
+            target="_blank"
+            {% assign link_types = 'noopener noreferrer' %}
+          {% endunless %}
+
+          {% if entry.type == 'mastodon' %}
+            {% assign link_types = link_types | append: ' me' | strip %}
+          {% endif %}
+
+          {% unless link_types == empty %}
+            rel="{{ link_types }}"
+          {% endunless %}
+        >
+          <i class="{{ entry.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
