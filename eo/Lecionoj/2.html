@@ -1,0 +1,49 @@
+---
+layout: lesson
+lang: eo
+title: 2 - la plej simpla frazo
+---
+
+<p class="text-center">
+    <strong><span  style="color: black;">{mi, sina} </span><span  style="color: red;">+ </span><span  style="color: black;">{vorto}</span></strong>
+</p>
+
+<hr>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>mi pona!</em></td>
+            <td class="text-start ps-2 align-top">mi bonas.</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina moku.</em></td>
+            <td class="text-start ps-2 align-top">vi manĝas.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div class="text-center">
+    <img src="{% link assets/img/Lecionoj/jan_1.png %}" alt="silueto de homo" title="silueto de homo">
+</div>
+
+<h2>Ekzerco</h2>
+
+<hr>
+
+{% include lesson_js.html %}
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">mi manĝas.</td>
+            <td class="align-top"><input id="moku" class="exercise_field" type="text" size="7" maxlength="7" onkeyup="checkAnswer('moku', 'mi moku')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"> vi bonas.</td>
+            <td class="align-top"><input id="pona" class="exercise_field" type="text" size="9" maxlength="9" onkeyup="checkAnswer('pona', 'sina pona')"></td>
+        </tr>
+    </tbody>
+</table>
