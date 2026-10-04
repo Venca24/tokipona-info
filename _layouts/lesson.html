@@ -4,34 +4,38 @@ layout: page
 
 {{ content }}
 
-{% assign current = page.name | remove: '.html' | plus: 0 %}
+<hr>
 
-{% assign default_prev = current | minus: 1 %}
-{% assign prev = page.prev | default: default_prev %}
+{% assign current = page.name | remove: '.html' %}
 
-{% assign default_next = current | plus: 1 %}
-{% assign next = page.next | default: default_next %}
+{% assign prev = page.prev %}
+{% unless prev %}
+  {% assign prev = current | plus: 0 | minus: 1 %}
+{% endunless %}
+
+{% assign next = page.next %}
+{% unless next %}
+  {% assign next = current | plus: 0 | plus: 1 %}
+{% endunless %}
 
 {% assign url_parts = page.url | remove_first: '/' | split: '/' %}
 {% assign lang = url_parts[0] %}
 {% assign section = url_parts[1] %}
 {% assign base_url = '/' | append: lang | append: '/' | append: section | append: '/' %}
 
-<div style="margin-top: 1.33em;"></div>
-
-<table width="100%">
+<table class="w-100">
     <tbody>
         <tr>
-            {% if current > 0 %}
+            {% if prev %}
                 <td align="left">
                     <a href="{{ base_url | relative_url }}{{ prev }}">< antaŭa leciono</a>
                 </td>
             {% endif %}
-            {% unless next >= 76 %}
+            {% if next %}
                 <td align="right">
                     <a href="{{ base_url | relative_url }}{{ next }}">sekva leciono ></a>
                 </td>
-            {% endunless %}
+            {% endif %}
         </tr>
     </tbody>
 </table>
