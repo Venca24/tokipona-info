@@ -1,0 +1,63 @@
+---
+layout: lesson
+lang: eo
+title: 9 - posedaĵoj
+---
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>moku mi</em></td>
+            <td class="text-start ps-2 align-top">mia manĝaĵo</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>pipi sina</em></td>
+            <td class="text-start ps-2 align-top">via insekto</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>ilo jan</em></td>
+            <td class="text-start ps-2 align-top">ilo de iu</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>kili ona</em></td>
+            <td class="text-start ps-2 align-top">lia frukto</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>mi jo e ilo sina.</em></td>
+            <td class="text-start ps-2 align-top">mi havas vian ilon.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div class="text-center">
+    <img src="{% link assets/img/Lecionoj/kili_en_pipi.png %}" alt="desegnaĵo de frukto kaj kokcinelo" title="desegnaĵo de frukto kaj kokcinelo">
+</div>
+
+<h2>Ekzerco</h2>
+
+<hr>
+
+{% include lesson_js.html %}
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">via manĝaĵo</td>
+            <td class="align-top"><input id="moku" class="exercise_field" type="text" size="9" maxlength="9" onkeyup="checkAnswer('moku', 'moku sina')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">mia ilo</td>
+            <td class="align-top"><input id="ilo" class="exercise_field" type="text" size="6" maxlength="6" onkeyup="checkAnswer('ilo', 'ilo mi')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">lia io</td>
+            <td class="align-top"><input id="ijo" class="exercise_field" type="text" size="7" maxlength="7" onkeyup="checkAnswer('ijo', 'ijo ona')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">vi havas mian frukton.</td>
+            <td class="align-top"><input id="kili" class="exercise_field" type="text" size="17" maxlength="17" onkeyup="checkAnswer('kili', 'sina jo e kili mi')"></td>
+        </tr>
+    </tbody>
+</table>
