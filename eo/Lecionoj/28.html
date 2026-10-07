@@ -1,0 +1,76 @@
+---
+layout: lesson
+lang: eo
+title: 28 - simplaj demandoj
+---
+
+<p class="text-center">
+    <span class="fs-5">demandojn, al kiuj eblas respondi <strong>jes</strong> aŭ <strong>ne</strong>, oni kreas jene:</span>
+</p>
+
+<hr>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>moku li pona ala pona?</em></td>
+            <td class="text-start ps-2 align-top">ĉu la manĝo estas bona?<br><small>(la manĝo bona ne bona?)</small></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina pona ala pona?</em></td>
+            <td class="text-start ps-2 align-top">ĉu vi bonfartas?</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>suno li suli ala suli?</em></td>
+            <td class="text-start ps-2 align-top">ĉu la suno estas granda?</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina wile ala wile moku?</em></td>
+            <td class="text-start ps-2 align-top">ĉu vi volas manĝi?</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>ona li olin ala olin e sina?</em></td>
+            <td class="text-start ps-2 align-top">ĉu li amas vin?</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div class="text-center">
+    <img src="{% link assets/img/Lecionoj/kili_3.png %}" alt="desegnaĵo de frago kaj pomo" title="desegnaĵo de frago kaj pomo">
+</div>
+
+<h2>Ekzerco</h2>
+
+<hr>
+
+{% include lesson_js.html %}
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">ĉu ŝi amuziĝas?</td>
+            <td class="align-top"><input id="musi" class="exercise_field" type="text" size="20" maxlength="20" onkeyup="checkAnswer('musi', 'ona li musi ala musi')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">ĉu vi amas min?</td>
+            <td class="align-top"><input id="olin" class="exercise_field" type="text" size="23" maxlength="23" onkeyup="checkAnswer('olin', 'sina olin ala olin e mi')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">ĉu li vidis mian domon?</td>
+            <td class="align-top"><input id="lukin" class="exercise_field" type="text" size="32" maxlength="32" onkeyup="checkAnswer('lukin', 'ona li lukin ala lukin e tomo mi')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">ĉu vi volas vidi la lunon?</td>
+            <td class="align-top"><input id="mun" class="exercise_field" type="text" size="30" maxlength="30" onkeyup="checkAnswer('mun', 'sina wile ala wile lukin e mun')"></td>
+        </tr>
+    </tbody>
+</table>
