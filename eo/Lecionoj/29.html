@@ -1,0 +1,96 @@
+---
+layout: lesson
+lang: eo
+title: 29 - respondante jes aŭ ne
+---
+
+<p class="text-center">
+    <span class="fs-5">ni supozu ke iu demandas vin:</span>
+</p>
+
+<p class="text-center">
+    <em>sina musi ala musi?</em><br><small>(ĉu vi amuziĝas?)</small>
+</p>
+
+<hr>
+
+<p class="text-center">
+    <span class="fs-5">tiam vi povas respondi jene:</span>
+</p>
+
+<hr>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>musi</em></td>
+            <td class="text-start ps-2 align-top">jes, mi amuziĝas.</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>musi ala</em></td>
+            <td class="text-start ps-2 align-top">ne, mi ne amuziĝas.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<p class="text-center">
+    <span class="fs-5">alia ekzemplo:</span>
+</p>
+
+<p class="text-center">
+    <em>sina lukin ala lukin e soweli lili?</em><br><small>(ĉu vi vidis la hamstron?)</small>
+</p>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>lukin</em></td>
+            <td class="text-start ps-2 align-top">jes, mi vidis ĝin.</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>lukin ala</em></td>
+            <td class="text-start ps-2 align-top">ne, mi ne vidis ĝin.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div class="text-center">
+    <img src="{% link assets/img/Lecionoj/soweli_1.png %}" alt="desegnaĵo de hamstro" title="desegnaĵo de hamstro">
+</div>
+
+<h2>Ekzerco</h2>
+
+{% include lesson_js.html %}
+
+<p class="text-center">
+    respondu je demandoj laŭ la krampoj
+</p>
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>kili ni li suli ala suli?</em> (ne)</td>
+            <td class="align-top"><input id="suli" class="exercise_field" type="text" size="8" maxlength="8" onkeyup="checkAnswer('suli', 'suli ala')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina pona ala pona?</em> (jes)</td>
+            <td class="align-top"><input id="pona" class="exercise_field" type="text" size="4" maxlength="4" onkeyup="checkAnswer('pona', 'pona')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina olin ala olin e mi?</em> (jes)</td>
+            <td class="align-top"><input id="olin" class="exercise_field" type="text" size="4" maxlength="4" onkeyup="checkAnswer('olin', 'olin')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>ona li lukin ala lukin e tomo mi?</em> (ne)</td>
+            <td class="align-top"><input id="lukin" class="exercise_field" type="text" size="9" maxlength="9" onkeyup="checkAnswer('lukin', 'lukin ala')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>sina wile ala wile moku e kili?</em> (ne)</td>
+            <td class="align-top"><input id="wile" class="exercise_field" type="text" size="8" maxlength="8" onkeyup="checkAnswer('wile', 'wile ala')"></td>
+        </tr>
+    </tbody>
+</table>
