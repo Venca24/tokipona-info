@@ -4,6 +4,8 @@
 
 Tiu ĉi projekto estas reimplementigo de la retejo tokipona.info kiel statika retejo generita de Jekyll.
 
+Ĝia ĉefa celo estas prezenti la enhavon de la libro _toki pona en 76 ilustritaj lecionoj_ (publikigita en 2013 de la eldonejo Espero) en cifereca formo kun iom da aldona enhavo.
+
 ## Kiel komenci
 
 1. Elŝutu la fontokodon
