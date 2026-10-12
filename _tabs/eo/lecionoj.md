@@ -1,7 +1,7 @@
 ---
 layout: null
 lang: eo
-order: 2
+order: 3
 title: Lecionoj
 target_url: /eo/Lecionoj/
 ---
