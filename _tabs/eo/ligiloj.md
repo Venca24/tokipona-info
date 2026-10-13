@@ -1,7 +1,7 @@
 ---
 layout: null
 lang: eo
-order: 6
+order: 7
 title: Ligiloj
 target_url: /eo/ligiloj/
 ---
