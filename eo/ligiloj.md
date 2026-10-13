@@ -11,6 +11,7 @@ target_url: /eo/ligiloj/
 
 ## Diversaj
 
+  * [jan Pepa & soweli Kawa](https://www.peppercarrot.com/tp/) - tokipona versio de la bildrakonto Pipro kaj Karoĉjo (_Pepper & Carrot_)
   * [Signolingvo de Chris Huff](https://chuff.tumblr.com/post/45011424771/chris-huffs-toki-pona-sign-language)
   * [tokipona.net](https://tokipona.net/) - lingvaj iloj
 
