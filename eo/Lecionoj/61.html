@@ -1,0 +1,65 @@
+---
+layout: lesson
+lang: eo
+title: 61 - ekzemploj
+---
+
+<hr style="border-top: 1px solid #ccc;">
+
+<p class="text-center">
+    <span class="fs-5">ĉiuj vortoj de situo havas ankaŭ aliajn uzojn,<br>kaj oni uzas ilin kiel substantivojn<br>(kaj ne kiel prepoziciojn) por eviti konfuzon.</span>
+</p>
+
+<hr style="border-top: 1px solid #ccc;">
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>ona li lon sewi mi.</em></td>
+            <td class="text-start ps-2 align-top">li estas super mi.<br><small>(li estas en mia supro.)</small></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>pipi li lon poka sina.</em></td>
+            <td class="text-start ps-2 align-top">la muŝo estas apud vi.<br><small>(la muŝo estas en via flanko)</small></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>mi lon poka telo.</em></td>
+            <td class="text-start ps-2 align-top">mi estas en la plaĝo.<br><small>(mi estas en flanko de la maro)</small></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>moku li lon insa mi.</em></td>
+            <td class="text-start ps-2 align-top">la manĝo estas en mia interno.</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>jan lili li lon insa tomo.</em></td>
+            <td class="text-start ps-2 align-top">la infanoj estas en interno de la domo.</td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>ilo moku li lon anpa sina.</em></td>
+            <td class="text-start ps-2 align-top">la forketo estas sub vi.<br><small>(la forketo estas en via malsupro)</small></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top"><em>tomo sona mi li lon monsi pi tomo sina.</em></td>
+            <td class="text-start ps-2 align-top">mia lernejo estas malantaŭ via domo.<br><small>(mia lernejo estas en la malantaŭo de via domo)</small></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Ekzerco</h2>
+
+{% include lesson_js.html %}
+
+<table class="w-100">
+    <tbody>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">la insekto estas sub mi.</td>
+            <td class="align-top"><input id="anpa" class="exercise_field" type="text" size="19" maxlength="19" onkeyup="checkAnswer('anpa', 'pipi li lon anpa mi')"></td>
+        </tr>
+        <tr>
+            <td class="w-50 text-end pe-2 align-top">mia domo estas apud (flanke de) via domo.</td>
+            <td class="align-top"><input id="poka" class="exercise_field" type="text" size="28" maxlength="28" onkeyup="checkAnswer('poka', 'tomo mi li poka pi tomo sina')"></td>
+        </tr>
+    </tbody>
+</table>
