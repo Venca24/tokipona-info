@@ -2,6 +2,10 @@
 layout: page
 ---
 
+<h1>{{ page.title }}</h1>
+
+<hr>
+
 {{ content }}
 
 <hr>
@@ -23,19 +27,15 @@ layout: page
 {% assign section = url_parts[1] %}
 {% assign base_url = '/' | append: lang | append: '/' | append: section | append: '/' %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            {% if prev %}
-                <td align="left">
-                    <a href="{{ base_url | relative_url }}{{ prev }}">&lt; antaŭa leciono</a>
-                </td>
-            {% endif %}
-            {% if next %}
-                <td align="right">
-                    <a href="{{ base_url | relative_url }}{{ next }}">sekva leciono &gt;</a>
-                </td>
-            {% endif %}
-        </tr>
-    </tbody>
-</table>
+<nav class="d-flex justify-content-between align-items-center w-100 my-4">
+    <div>
+        {% if prev %}
+            <a href="{{ base_url | relative_url }}{{ prev }}">&lt; antaŭa leciono</a>
+        {% endif %}
+    </div>
+    <div>
+        {% if next %}
+            <a href="{{ base_url | relative_url }}{{ next }}">sekva leciono &gt;</a>
+        {% endif %}
+    </div>
+</nav>
