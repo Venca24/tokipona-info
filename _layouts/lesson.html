@@ -18,9 +18,9 @@ layout: page
 {% endunless %}
 
 {% assign next = page.next %}
-{% unless next %}
+{% if next == nil %}
   {% assign next = current | plus: 0 | plus: 1 %}
-{% endunless %}
+{% endif %}
 
 {% assign url_parts = page.url | remove_first: '/' | split: '/' %}
 {% assign lang = url_parts[0] %}
