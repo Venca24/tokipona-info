@@ -13,9 +13,9 @@ layout: page
 {% assign current = page.name | remove: '.html' %}
 
 {% assign prev = page.prev %}
-{% unless prev %}
+{% if prev == nil %}
   {% assign prev = current | plus: 0 | minus: 1 %}
-{% endunless %}
+{% endif %}
 
 {% assign next = page.next %}
 {% if next == nil %}
