@@ -16,7 +16,7 @@ When you are asked to do a code review and the user gives you no list of changes
 
 During a code review, you MUST NOT change any file, but changes to files MAY occur after the code review.
 
-You MUST write conclusion at the end of the code review as either "rady to commit", "changes requested" (plus a list of required changes), or "rejected".
+You MUST write conclusion at the end of the code review as either "ready to commit", "changes requested" (plus a list of required changes), or "rejected".
 
 ## Never run
 
