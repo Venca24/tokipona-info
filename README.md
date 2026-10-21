@@ -18,9 +18,25 @@ Its main goal is to present the content of the book _toki pona en 76 ilustritaj 
 
 3. Run the site on localhost
 
-        $ jekyll serve
+        $ bundle exec jekyll serve
 
 4. Go to `http://localhost:4000` in your browser.
+
+### Deploy in OCI container
+
+1. Download the source code
+
+        $ git clone git@github.com:Venca24/tokipona-info.git
+
+2. Build the container
+
+        $ docker build -t tokipona .
+
+3. Run the container
+
+        $ podman run --rm -p 8000:8000 tokipona
+
+4. Go to `http://localhost:8000` in your browser.
 
 ## License
 

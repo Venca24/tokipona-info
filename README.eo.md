@@ -18,9 +18,25 @@ Tiu ĉi projekto estas reimplementigo de la retejo tokipona.info kiel statika re
 
 3. Startigu la retejon en localhost
 
-        $ jekyll serve
+        $ bundle exec jekyll serve
 
 4. Iru al `http://localhost:4000` en via retumilo.
+
+### Disponigi en OCI-kontenero
+
+1. Elŝutu la fontokodon
+
+        $ git clone git@github.com:Venca24/tokipona-info.git
+
+2. Kreu la konteneron
+
+        $ docker build -t tokipona .
+
+3. Startigu la konteneron
+
+        $ podman run --rm -p 8000:8000 tokipona
+
+4. Iru al `http://localhost:8000` en via retumilo.
 
 ## Permesilo
 
