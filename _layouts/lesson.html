@@ -30,12 +30,12 @@ layout: page
 <nav class="d-flex justify-content-between align-items-center w-100 my-4">
     <div>
         {% if prev %}
-            <a href="{{ base_url | relative_url }}{{ prev }}">&lt; antaŭa leciono</a>
+            <a href="{{ base_url | relative_url }}{{ prev }}.html">&lt; antaŭa leciono</a>
         {% endif %}
     </div>
     <div>
         {% if next %}
-            <a href="{{ base_url | relative_url }}{{ next }}">sekva leciono &gt;</a>
+            <a href="{{ base_url | relative_url }}{{ next }}.html">sekva leciono &gt;</a>
         {% endif %}
     </div>
 </nav>

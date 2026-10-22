@@ -2,7 +2,6 @@
 layout: page
 lang: eo
 title: Vortaro
-target_url: /eo/vortaro/
 ---
 
 ## a

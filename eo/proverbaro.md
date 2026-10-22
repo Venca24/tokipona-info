@@ -2,7 +2,6 @@
 layout: page
 lang: eo
 title: Proverbaro
-target_url: /eo/proverbaro/
 ---
 
 <table class="w-100">

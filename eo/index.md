@@ -28,5 +28,5 @@ En Julio 2013 estis eldonita la unua presita lernolibro de **toki pona**, kiu aÄ
 <p style="text-align: center; color: yellow;"><span style="font-size:120%"><strong>kial ne provi tion?</strong></span></p></div>
 
 <div style="text-align: center;">
-  <a href="Lecionoj/0" class="start-button">Ek!</a>
+  <a href="Lecionoj/0.html" class="start-button">Ek!</a>
 </div>

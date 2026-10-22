@@ -2,7 +2,6 @@
 layout: page
 lang: eo
 title: Ligiloj
-target_url: /eo/ligiloj/
 ---
 
   * [Oficiala retpaĝaro de Tokipono](https://tokipona.org/)

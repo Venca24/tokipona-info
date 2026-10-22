@@ -2,7 +2,6 @@
 layout: page
 lang: eo
 title: Pri la libro
-target_url: /eo/pri_la_libro/
 ---
 
 **toki pona en 76 ilustritaj lecionoj** estas la unua presita lernolibro de tokipono. En 2004 Eliazar Parra Cárdenas faris la lernolibron en la hispana kaj post 9 jaroj Marek Blahuš tradukis ĝin en Esperanton kaj la organizo [E@I](https://ikso.net/eo/) eldonis ĝin ĉe la eldonejo [Espero](https://espero.sk/).
