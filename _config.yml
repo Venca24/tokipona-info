@@ -17,6 +17,11 @@ theme_mode: light
 
 toc: false
 
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+
 collections:
   tabs:
     output: true
