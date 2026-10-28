@@ -10,7 +10,7 @@ Its main goal is to present the content of the book _toki pona en 76 ilustritaj 
 
 1. Download the source code
 
-        $ git clone git@github.com:Venca24/tokipona-info.git
+        $ git clone --recurse-submodules git@github.com:Venca24/tokipona-info.git
 
 2. Install the dependencies
 

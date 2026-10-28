@@ -10,7 +10,7 @@ Tiu ĉi projekto estas reimplementigo de la retejo tokipona.info kiel statika re
 
 1. Elŝutu la fontokodon
 
-        $ git clone git@github.com:Venca24/tokipona-info.git
+        $ git clone --recurse-submodules git@github.com:Venca24/tokipona-info.git
 
 2. Instalu la dependaĵojn
 

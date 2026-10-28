@@ -17,6 +17,10 @@ theme_mode: light
 
 toc: false
 
+assets:
+  self_host:
+    enabled: true
+
 pwa:
   enabled: true
   cache:
