@@ -40,6 +40,6 @@ Its main goal is to present the content of the book _toki pona en 76 ilustritaj 
 
 ## License
 
-The content of the webpage, including the lessons and drawings, are under the terms of [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/deed.en).
+The source content of the webpage, including the lessons and drawings, is under the terms of [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/deed.en).
 
 The code and any piece of original software, which is part of this repository is released under MIT (Expat) license. The site uses [Chirpy Jekyll Theme](https://github.com/cotes2020/jekyll-theme-chirpy/) by Cotes Chung under the same license.

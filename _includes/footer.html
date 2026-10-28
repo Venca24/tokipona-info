@@ -9,7 +9,8 @@
 >
   <p>
     {{- '©' }}
-    <time datetime="2013">2013</time>-<time>{{ 'now' | date: '%Y' }}</time> <a href="https://ikso.net/">Edukado@Interreto</a>
+    {% assign current_year = 'now' | date: '%Y' -%}
+    <time datetime="2013">2013</time>-<time datetime="{{ current_year }}">{{ current_year }}</time> <a href="https://ikso.net/">Edukado@Interreto</a> | <a href="{% link eo/auxtorrajto.html %}">Aŭtorrajto</a>
 
     {% if site.social.links %}
       <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
