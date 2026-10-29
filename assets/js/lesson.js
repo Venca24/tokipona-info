@@ -4,7 +4,7 @@ function checkAnswer(id, right_answer)
 
     if(field.value === right_answer)
     {
-        field.style.backgroundColor = "lightgreen";
+        field.style.backgroundColor = "#d4edda";
     }
     else
     {
