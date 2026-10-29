@@ -1,4 +1,4 @@
-name: Test resulting HTML
+name: Build, Test and Deploy
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +27,13 @@ jobs:
 
       - name: Run HTML validation
         run: bundle exec rake test_html
+
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "_site/"
+          REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+          REMOTE_USER: ${{ secrets.SERVER_USER }}
+          TARGET: ${{ secrets.SERVER_DIR }}
