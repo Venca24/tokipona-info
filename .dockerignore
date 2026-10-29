@@ -2,6 +2,7 @@
 .git
 .github
 .gitignore
+.gitmodules
 .jekyll-cache
 _site
 CONTRIBUTING.md
