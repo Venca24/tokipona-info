@@ -55,3 +55,15 @@ compress_html:
   endings: false
   profile: false
   blanklines: false
+
+exclude:
+  - AGENTS.md
+  - CONTRIBUTING.md
+  - Dockerfile
+  - LICENSE
+  - Rakefile
+  - README.md
+  - README.eo.md
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
