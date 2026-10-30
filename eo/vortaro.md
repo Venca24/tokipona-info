@@ -4,6 +4,8 @@ lang: eo
 title: Vortaro
 ---
 
+<script src="{% link assets/js/tooltip.js %}"></script>
+
 ## a
 {: lang="tok" }
 {% include interjection.html %} ho! ha! uf! nu! oj! aŭ! (emocivorto)
