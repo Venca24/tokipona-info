@@ -33,17 +33,27 @@ title: 61 - ekzemploj
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">la insekto estas sub mi.</td>
-            <td class="align-top"><input id="anpa" class="exercise_field" type="text" size="19" maxlength="19" onkeyup="checkAnswer('anpa', 'pipi li lon anpa mi')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">mia domo estas apud (flanke de) via domo.</td>
-            <td class="align-top"><input id="poka" class="exercise_field" type="text" size="28" maxlength="28" onkeyup="checkAnswer('poka', 'tomo mi li poka pi tomo sina')"> .</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "la insekto estas sub mi.",
+        prefix: "",
+        suffix: " ?",
+        answers: ["pipi li lon anpa mi"]
+      },
+      {
+        prompt: "mia domo estas apud (flanke de) via domo.",
+        prefix: "",
+        suffix: " ?",
+        answers: ["tomo mi li poka pi tomo sina"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>
