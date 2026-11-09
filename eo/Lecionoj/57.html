@@ -49,29 +49,45 @@ title: 57 - seme profunde 1
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kio estas tio?</td>
-            <td class="align-top"><input id="ni" class="exercise_field" type="text" size="10" maxlength="10" onkeyup="checkAnswer('ni', 'ni li seme')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kion vi manĝas?</td>
-            <td class="align-top"><input id="moku" class="exercise_field" type="text" size="16" maxlength="16" onkeyup="checkAnswer('moku', 'sina moku e seme')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kio plaĉas al li?</td>
-            <td class="align-top"><input id="pona" class="exercise_field" type="text" size="21" maxlength="21" onkeyup="checkAnswer('pona', 'seme li pona tawa ona')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kie estas Daisy?</td>
-            <td class="align-top"><input id="lon" class="exercise_field" type="text" size="21" maxlength="21" onkeyup="checkAnswer('lon', 'jan Daisy li lon seme')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kiu mortigis lin?</td>
-            <td class="align-top"><input id="moli" class="exercise_field" type="text" size="22" maxlength="22" onkeyup="checkAnswer('moli', 'jan seme li moli e ona')"> ?</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "kio estas tio?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["ni li seme"]
+      },
+      {
+        prompt: "kion vi manĝas?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["sina moku e seme"]
+      },
+      {
+        prompt: "kio plaĉas al li?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["seme li pona tawa ona"]
+      },
+      {
+        prompt: "kie estas Daisy?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["jan Daisy li lon seme"]
+      },
+      {
+        prompt: "kiu mortigis lin?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["jan seme li moli e ona"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>
