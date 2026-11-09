@@ -72,17 +72,27 @@ title: 51 - pli pri numeroj
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>dek bovinoj</em></td>
-            <td class="align-top"><input id="soweli" class="exercise_field" type="text" size="16" maxlength="16" onkeyup="checkAnswer('soweli', 'soweli luka luka')"></td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>du vortoj</em></td>
-            <td class="align-top"><input id="nimi" class="exercise_field" type="text" size="7" maxlength="7" onkeyup="checkAnswer('nimi', 'nimi tu')"></td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "dek bovinoj",
+        prefix: "",
+        suffix: "",
+        answers: ["soweli luka luka"]
+      },
+      {
+        prompt: "du vortoj",
+        prefix: "",
+        suffix: "",
+        answers: ["nimi tu"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>
