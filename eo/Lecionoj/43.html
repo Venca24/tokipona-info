@@ -27,21 +27,33 @@ title: 43 - lon poka
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>li volas manĝi kun vi.</em></td>
-            <td class="align-top"><input id="moku" class="exercise_field" type="text" size="30" maxlength="30" onkeyup="checkAnswer('moku', 'moku en toki li pona tawa mi')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>ni iros kun ŝi en kamparon.</em></td>
-            <td class="align-top"><input id="tawa" class="exercise_field" type="text" size="31" maxlength="31" onkeyup="checkAnswer('tawa', 'mi mute li tawa ma lon poka ona')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>mi iras kun mia hundo.</em></td>
-            <td class="align-top"><input id="soweli" class="exercise_field" type="text" size="29" maxlength="29" onkeyup="checkAnswer('soweli', 'mi tawa lon poka pi soweli mi')"> .</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "li volas manĝi kun vi.",
+        prefix: "",
+        suffix: " .",
+        answers: ["ona li wile moku lon poka sina"]
+      },
+      {
+        prompt: "ni iros kun ŝi en kamparon.",
+        prefix: "",
+        suffix: " .",
+        answers: ["mi mute li tawa ma lon poka ona"]
+      },
+      {
+        prompt: "mi iras kun mia hundo.",
+        prefix: "",
+        suffix: " .",
+        answers: ["mi tawa lon poka pi soweli mi"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>
