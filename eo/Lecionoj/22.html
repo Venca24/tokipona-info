@@ -47,21 +47,33 @@ title: 22 - sama
 
 <hr>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">vi estas kiel mi.</td>
-            <td class="align-top"><input id="mi" class="exercise_field" type="text" size="12" maxlength="12" onkeyup="checkAnswer('mi', 'sina sama mi')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">ni havas samajn manĝilojn.</td>
-            <td class="align-top"><input id="ilo" class="exercise_field" type="text" size="29" maxlength="29" onkeyup="checkAnswer('ilo', 'mi mute li jo e ilo moku sama')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">nigruloj volas egalecon.</td>
-            <td class="align-top">jan pimeja li <input id="sama" class="exercise_field" type="text" size="11" maxlength="11" onkeyup="checkAnswer('sama', 'wile e sama')"> .</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "vi estas kiel mi.",
+        prefix: "",
+        suffix: " .",
+        answers: ["sina sama mi"]
+      },
+      {
+        prompt: "ni havas samajn manĝilojn.",
+        prefix: "",
+        suffix: " .",
+        answers: ["mi mute li jo e ilo moku sama"]
+      },
+      {
+        prompt: "nigruloj volas egalecon.",
+        prefix: "jan pimeja li ",
+        suffix: " .",
+        answers: ["wile e sama"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>

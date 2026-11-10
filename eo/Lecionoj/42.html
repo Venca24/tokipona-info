@@ -45,17 +45,27 @@ title: 42 - en
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>mi ŝatas manĝi kaj babili.</em></td>
-            <td class="align-top"><input id="pona" class="exercise_field" type="text" size="28" maxlength="28" onkeyup="checkAnswer('pona', 'moku en toki li pona tawa mi')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>domo de Scott kaj Schelby</em></td>
-            <td class="align-top"><input id="tomo" class="exercise_field" type="text" size="32" maxlength="32" onkeyup="checkAnswer('tomo', 'tomo pi jan Scott en jan Schelby')"></td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "mi ŝatas manĝi kaj babili.",
+        prefix: "",
+        suffix: " .",
+        answers: ["moku en toki li pona tawa mi"]
+      },
+      {
+        prompt: "domo de Scott kaj Schelby",
+        prefix: "",
+        suffix: " .",
+        answers: ["tomo pi jan Scott en jan Schelby"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>

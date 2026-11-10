@@ -48,21 +48,33 @@ next: Rimarko_3
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kial ŝi faras tion?</td>
-            <td class="align-top"><input id="pali" class="exercise_field" type="text" size="25" maxlength="25" onkeyup="checkAnswer('pali', 'ona li pali e ni tan seme')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kiu pilko plaĉas al vi?</td>
-            <td class="align-top"><input id="sike" class="exercise_field" type="text" size="27" maxlength="27" onkeyup="checkAnswer('sike', 'sike seme li pona tawa sina')"> ?</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top">kiel vi alvenis?</td>
-            <td class="align-top"><input id="kama" class="exercise_field" type="text" size="22" maxlength="22" onkeyup="checkAnswer('kama', 'sina kama kepeken seme')"> ?</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "kial ŝi faras tion?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["ona li pali e ni tan seme"]
+      },
+      {
+        prompt: "kiu pilko plaĉas al vi?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["sike seme li pona tawa sina"]
+      },
+      {
+        prompt: "kiel vi alvenis?",
+        prefix: "",
+        suffix: " ?",
+        answers: ["sina kama kepeken seme"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>

@@ -49,21 +49,33 @@ title: 54 - taso
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>li diris tion, sed neniu aŭskultis lin.</em></td>
-            <td class="align-top">ona li toki e ni. <input id="kute" class="exercise_field" type="text" size="26" maxlength="26" onkeyup="checkAnswer('kute', 'taso jan ala li kute e ona')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>mi manĝis kun ino, sed ŝi havas koramikon.</em></td>
-            <td class="align-top">mi en meli li moku. <input id="meli" class="exercise_field" type="text" size="21" maxlength="21" onkeyup="checkAnswer('meli', 'taso ona li jo e mije')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>li volas nur ludi.</em></td>
-            <td class="align-top"><input id="musi" class="exercise_field" type="text" size="21" maxlength="21" onkeyup="checkAnswer('musi', 'ona li wile musi taso')"> .</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "li diris tion, sed neniu aŭskultis lin.",
+        prefix: "ona li toki e ni. ",
+        suffix: " .",
+        answers: ["taso jan ala li kute e ona"]
+      },
+      {
+        prompt: "mi manĝis kun ino, sed ŝi havas koramikon.",
+        prefix: "mi en meli li moku. ",
+        suffix: " .",
+        answers: ["taso ona li jo e mije", "taso ona li jo e jan olin"]
+      },
+      {
+        prompt: "li volas nur ludi.",
+        prefix: "",
+        suffix: " .",
+        answers: ["ona li wile musi taso"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>

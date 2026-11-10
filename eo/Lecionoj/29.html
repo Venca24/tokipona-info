@@ -52,33 +52,49 @@ title: 29 - respondante jes aŭ ne
 
 <h2>Ekzerco</h2>
 
-{% include lesson_js.html %}
+{% include exercise_js.html %}
 
 <p class="text-center">
     respondu je demandoj laŭ la krampoj
 </p>
 
-<table class="w-100">
-    <tbody>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>kili ni li suli ala suli?</em> (ne)</td>
-            <td class="align-top"><input id="suli" class="exercise_field" type="text" size="8" maxlength="8" onkeyup="checkAnswer('suli', 'suli ala')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>sina pona ala pona?</em> (jes)</td>
-            <td class="align-top"><input id="pona" class="exercise_field" type="text" size="4" maxlength="4" onkeyup="checkAnswer('pona', 'pona')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>sina olin ala olin e mi?</em> (jes)</td>
-            <td class="align-top"><input id="olin" class="exercise_field" type="text" size="4" maxlength="4" onkeyup="checkAnswer('olin', 'olin')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>ona li lukin ala lukin e tomo mi?</em> (ne)</td>
-            <td class="align-top"><input id="lukin" class="exercise_field" type="text" size="9" maxlength="9" onkeyup="checkAnswer('lukin', 'lukin ala')"> .</td>
-        </tr>
-        <tr>
-            <td class="w-50 text-end pe-2 align-top"><em>sina wile ala wile moku e kili?</em> (ne)</td>
-            <td class="align-top"><input id="wile" class="exercise_field" type="text" size="8" maxlength="8" onkeyup="checkAnswer('wile', 'wile ala')"> .</td>
-        </tr>
-    </tbody>
-</table>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercisesData = [
+      {
+        prompt: "kili ni li suli ala suli? (ne)",
+        prefix: "",
+        suffix: " .",
+        answers: ["suli ala"]
+      },
+      {
+        prompt: "sina pona ala pona? (jes)",
+        prefix: "",
+        suffix: " .",
+        answers: ["pona"]
+      },
+      {
+        prompt: "sina olin ala olin e mi? (jes)",
+        prefix: "",
+        suffix: " .",
+        answers: ["olin"]
+      },
+      {
+        prompt: "ona li lukin ala lukin e tomo mi? (ne)",
+        prefix: "",
+        suffix: " .",
+        answers: ["lukin ala"]
+      },
+      {
+        prompt: "sina wile ala wile moku e kili? (ne)",
+        prefix: "",
+        suffix: " .",
+        answers: ["wile ala"]
+      }
+    ];
+
+    initExercises(exercisesData, 'exercise-container');
+  });
+</script>
+
+<div id="exercise-container"></div>
