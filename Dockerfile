@@ -19,7 +19,13 @@ RUN bundle exec rake test_html
 
 
 # --- Phase 2: Runtime ---
-FROM docker.io/library/debian:trixie-slim AS deploy
+FROM docker.io/library/debian:trixie-slim
+
+LABEL org.opencontainers.image.title="tokipona.info" \
+      org.opencontainers.image.description="Toki Pona in 72 illustrated lessons as a static website" \
+      org.opencontainers.image.authors="Václav Zouzalík <Vaclav.Zouzalik@seznam.cz>" \
+      org.opencontainers.image.source="https://github.com/Venca24/tokipona-info" \
+      org.opencontainers.image.licenses="MIT"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     lighttpd \
