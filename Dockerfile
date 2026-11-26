@@ -1,5 +1,5 @@
 # --- Phase 1: Build (builder) ---
-FROM docker.io/library/ruby:3.4.11-slim AS builder
+FROM docker.io/library/ruby:3.4.13-slim AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
