@@ -34,7 +34,7 @@ Tiu ĉi projekto estas reimplementigo de la retejo tokipona.info kiel statika re
 
 3. Startigu la konteneron
 
-        $ podman run --rm -p 8000:8000 tokipona
+        $ docker run --rm --read-only --cap-drop=ALL -p 8000:8000 tokipona
 
 4. Iru al `http://localhost:8000` en via retumilo.
 

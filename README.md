@@ -34,7 +34,7 @@ Its main goal is to present the content of the book _toki pona en 76 ilustritaj 
 
 3. Run the container
 
-        $ podman run --rm -p 8000:8000 tokipona
+        $ docker run --rm --read-only --cap-drop=ALL -p 8000:8000 tokipona
 
 4. Go to `http://localhost:8000` in your browser.
 
