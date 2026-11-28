@@ -1,5 +1,4 @@
-# --- Phase 1: Build (builder) ---
-FROM docker.io/library/ruby:3.4.13-slim AS builder
+FROM docker.io/library/ruby:3.4.13-slim AS jekyll-builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -18,8 +17,29 @@ RUN bundle exec jekyll build
 RUN bundle exec rake test_html
 
 
-# --- Phase 2: Runtime ---
-FROM docker.io/library/debian:trixie-slim
+FROM docker.io/library/debian:trixie-slim AS lighttpd-builder
+
+RUN apt-get update && apt-get download \
+    lighttpd \
+    libpcre2-8-0 \
+    libnettle8t64
+
+RUN mkdir -p /rootfs && \
+    for deb in *.deb; do dpkg-deb -x "$deb" /rootfs; done
+
+RUN rm -rf /rootfs/usr/share/doc \
+           /rootfs/usr/share/man \
+           /rootfs/usr/share/info \
+           /rootfs/usr/share/lintian \
+           /rootfs/etc/init.d \
+           /rootfs/etc/lighttpd/conf-available \
+           /rootfs/etc/lighttpd/conf-enabled \
+           /rootfs/var/log \
+           /rootfs/var/cache \
+           /rootfs/var/www/html/*
+
+
+FROM gcr.io/distroless/cc-debian13
 
 LABEL org.opencontainers.image.title="tokipona.info" \
       org.opencontainers.image.description="Toki Pona in 72 illustrated lessons as a static website" \
@@ -27,23 +47,13 @@ LABEL org.opencontainers.image.title="tokipona.info" \
       org.opencontainers.image.source="https://github.com/Venca24/tokipona-info" \
       org.opencontainers.image.licenses="MIT"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    lighttpd \
-    media-types \
-    && rm -rf /var/lib/apt/lists/*
+COPY --from=lighttpd-builder /rootfs /
 
-RUN sed -i 's/server.port                 = 80/server.port                 = 8000/' /etc/lighttpd/lighttpd.conf && \
-    sed -i '/server.pid-file/d' /etc/lighttpd/lighttpd.conf && \
-    sed -i 's|server.errorlog             = "/var/log/lighttpd/error.log"|server.errorlog             = "/dev/stderr"|' /etc/lighttpd/lighttpd.conf
+COPY ./container/lighttpd.conf /etc/lighttpd/lighttpd.conf
 
-RUN rm -rf /var/www/html/*
+COPY --from=jekyll-builder --chown=65532:65532 /app/_site /var/www/html
 
-COPY --from=builder /app/_site /var/www/html
-
-RUN chown -R www-data:www-data /var/www/html
-
+USER nonroot
 EXPOSE 8000
 
-USER www-data
-
-CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
+ENTRYPOINT ["/usr/sbin/lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
